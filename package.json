@@ -1,0 +1,25 @@
+{
+  "name": "zulu-users-with-wallet",
+  "version": "0.0.1",
+  "description": "programa que permita el registro de sus clientes y creación de una billetera para cada usuario que almacene el balance en diferentes divisas",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3jFernando/usersWallet.git"
+  },
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "mongodb",
+    "apirest"
+  ],
+  "author": "Fernando Claros Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3jFernando/usersWallet/issues"
+  },
+  "homepage": "https://github.com/3jFernando/usersWallet#readme"
+}
