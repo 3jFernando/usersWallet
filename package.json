@@ -4,7 +4,7 @@
   "description": "programa que permita el registro de sus clientes y creación de una billetera para cada usuario que almacene el balance en diferentes divisas",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon main.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/3jFernando/usersWallet/issues"
   },
-  "homepage": "https://github.com/3jFernando/usersWallet#readme"
+  "homepage": "https://github.com/3jFernando/usersWallet#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "http": "0.0.1-security",
+    "mongoose": "^6.4.6",
+    "nodemon": "^2.0.19"
+  }
 }
