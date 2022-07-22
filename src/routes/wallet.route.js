@@ -1,7 +1,8 @@
 const router = require('express').Router();
-const { getAllWallets, storeWallet } = require('../controllers/wallet.controller');
+const { getAllWallets, storeWallet, toUpWallet } = require('../controllers/wallet.controller');
 
 router.get('/', getAllWallets)
 router.post('/', storeWallet)
+router.put('/:id', toUpWallet)
 
 module.exports = router;
