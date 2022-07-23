@@ -95,8 +95,8 @@ const toUpWallet = async (req, res) => {
 
             // actualizarla los balances (USD, COP)
             Wallet.updateOne({ _id: req.params.id }, newData)
-                .then(payload => {
-                    res.json({ message: "Billetera recargada.", wallet: payload });
+                .then(() => {
+                    res.json({ message: "Billetera recargada." });
                 })
                 .catch(() => res.status(500).json({ message: "Upps, no fue posible recargar la billetera." }));
 
