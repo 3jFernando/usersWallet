@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { getAllClients, storeClient } = require('../controllers/client.controller');
+const { getAll, store } = require('../controllers/client.controller');
 
 /**
  * @swagger
@@ -30,12 +30,13 @@ const { getAllClients, storeClient } = require('../controllers/client.controller
  *       - Cedula
  *       - Direccional
  *      example:
- *       Email: fernando.claros@misena.edu.co
- *       FullName: Fernando Claros
- *       Password: 123456
- *       Cedula: 10293832292
- *       Direccional: calle 20a #12-22 barrio x
+ *       Email: "fernando.claros@misena.edu.co"
+ *       FullName: "Fernando Claros"
+ *       Password: "123456"
+ *       Cedula: 10293832
+ *       Direccional: "calle 20a #12-22 barrio x"
  */
+
 /**
  * 
  * @swagger 
@@ -43,6 +44,8 @@ const { getAllClients, storeClient } = require('../controllers/client.controller
  *  get:
  *   summary: Obtener el listado completo de los clientes
  *   tags: [Clientes] 
+ *   security:
+ *    - bearerAuth: []
  *   responses:
  *    200: 
  *     description: clientes cargados con exito. 
@@ -55,14 +58,13 @@ const { getAllClients, storeClient } = require('../controllers/client.controller
  *    500: 
  *     description: Error, no fue posible procesar tu solicitud
  */
-router.get('/', getAllClients)
+router.get('/', getAll)
 
 /**
- * 
  * @swagger 
  * /api/v1/clients:
  *  post:
- *   summary: Crear clientes
+ *   summary: Crear Clientes
  *   tags: [Clientes]
  *   requestBody:
  *    required: true
@@ -73,10 +75,10 @@ router.get('/', getAllClients)
  *       $ref: '#/components/schemas/Client'
  *   responses:
  *    200: 
- *     description: cliente creado con exito. 
+ *     description: Clientes creado con exito. 
  *    500: 
  *     description: Error, no fue posible procesar tu solicitud
  */
-router.post('/', storeClient)
+router.post('/', store)
 
 module.exports = router;
