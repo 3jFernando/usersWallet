@@ -11,6 +11,9 @@ const swaggerSpec = {
         servers: [
             {
                 url: "http://localhost:3100"
+            },
+            {
+                url: "https://users-wallet.herokuapp.com"
             }
         ],
         components: {
