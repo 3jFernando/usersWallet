@@ -22,9 +22,9 @@ const { getAllWallets, storeWallet, toUpWallet } = require('../controllers/walle
  *       - BalanceUSD
  *       - BalanceCOP
  *      example:
- *       UserID: 1
- *       BalanceUSD: 2
- *       BalanceCOP: 2400
+ *       UserID: "ID_CLIENTE"
+ *       BalanceUSD: 1
+ *       BalanceCOP: 4300
  */
 
 /**
@@ -34,6 +34,8 @@ const { getAllWallets, storeWallet, toUpWallet } = require('../controllers/walle
  *  get:
  *   summary: Obtener el listado completo de las billeteras
  *   tags: [Billeteras] 
+ *   security:
+ *    - bearerAuth: []
  *   responses:
  *    200: 
  *     description: billeteras cargadas con exito. 
@@ -49,7 +51,6 @@ const { getAllWallets, storeWallet, toUpWallet } = require('../controllers/walle
 router.get('/', getAllWallets)
 
 /**
- * 
  * @swagger 
  * /api/v1/wallets:
  *  post:
@@ -62,12 +63,13 @@ router.get('/', getAllWallets)
  *      schema: 
  *       type: object
  *       $ref: '#/components/schemas/Wallet'
+ *   security:
+ *    - bearerAuth: []
  *   responses:
  *    200: 
  *     description: billetera creada con exito. 
  *    500: 
  *     description: Error, no fue posible procesar tu solicitud
- * 
  */
 router.post('/', storeWallet)
 
@@ -83,6 +85,8 @@ router.post('/', storeWallet)
  *      required: true
  *      in: path
  *      description: Identificador de la billetera, usado para verificar si la misma existe
+ *   security:
+ *    - bearerAuth: []
  *   requestBody:
  *    required: true
  *    content:
@@ -96,7 +100,7 @@ router.post('/', storeWallet)
  *         example: 20
  *        typeTopUp: 
  *          type: string
- *          example: USD o COP
+ *          example: USD
  *   responses:
  *    200: 
  *     description: billetera creada con exito.
